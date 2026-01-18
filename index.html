@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+</head>
+<body>
+    <h1>TO-DO List</h1>
+    <div>
+        <input type="text" id="todo-item">
+        <input type="button" value="ADD" id="add-btn">
+    </div>
+    <div id="container-box">
+        <div id="todo-container"></div>
+    </div>
+    
+</body>
+</html>
+<style>
+    body{
+        text-align: center;
+        background-color: burlywood;
+       
+    }
+    #todo-item{
+        width: 60%;
+        height: 50px;
+        border-radius: 5px;
+        color: black;
+        text-align: center;
+        font-size: larger;
+        border: 5px solid black;
+    }
+    #add-btn{
+        height: 55px;
+        border-radius: 5px;
+        width: 5%;
+        font-size: larger;
+        margin-left: 5px;
+    }
+
+    #todo-container{
+        width: 60%;
+        height: 500px;
+        border-radius: 5px;
+        color: black;
+        text-align: center;
+        font-size: larger;
+        background-color: aliceblue;
+        border: 5px solid black;
+        padding: 10px;
+    }
+    #container-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+        margin-left: -50px;
+        
+    }
+</style>
+<script>
+    
+    let button_event = document.getElementById('add-btn');
+    let container_input = document.getElementById('todo-container');
+    button_event.addEventListener('click', event => {
+        let inpt = document.getElementById('todo-item').value;
+        let new_ele = document.createElement("h1");
+        new_ele.innerText = inpt;
+        container_input.appendChild(new_ele);
+       
+    })
+</script>
